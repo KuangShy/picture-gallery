@@ -1,26 +1,32 @@
 require('normalize.css/normalize.css');
-require('styles/App.scss');
+require('../styles/App.scss');
 
 import React from 'react';
 
-let imageData = require('../data/imageData.json');
+/*
+// 获取图片信息
+let imageData = require('json!../data/imageData.json');
 
-function getImageUrl (imageDataArr) {
+// 利用自执行函数， 将图片名信息转成图片URL路径信息
+imageData = ((imageDataArr)=> {
   for (let i = 0; i < imageDataArr.length; i++) {
     let singleImageData = imageDataArr[i];
-    singleImageData.imageUrl = require('../image/singleImageData.fileName');
+    singleImageData.imageUrl = require('../images/' + singleImageData.fileName);
     imageDataArr[i] = singleImageData;
   }
   return imageDataArr;
-}
-imageData = getImageUrl(imageData);
+})(imageData);
+*/
 
 class AppComponent extends React.Component {
   render() {
     return (
-      <div className="index">
-        <div className="notice">Please edit <code>src/components/Main.js</code> to get started!</div>
-      </div>
+      <section className="stage">
+        <section className="image-sec">
+        </section>
+        <nav className="controller-nav">
+        </nav>
+      </section>
     );
   }
 }
